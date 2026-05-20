@@ -1,9 +1,9 @@
-from langchain_anthropic import ChatAnthropic
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(override=True)
 
 
 def format_docs(docs):
@@ -15,8 +15,8 @@ def create_qa_chain(vector_store):
 
     retriever = vector_store.as_retriever(search_kwargs={"k": 3})
 
-    llm = ChatAnthropic(
-        model="claude-3-haiku-20240307",
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-1.5-flash",
         temperature=0
     )
 

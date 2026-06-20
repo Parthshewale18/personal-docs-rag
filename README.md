@@ -1,4 +1,3 @@
-
 # 📄 Personal Document Q&A Agent
 
 An AI-powered RAG (Retrieval-Augmented Generation) application that allows users to upload PDF documents and ask questions about them using natural language.

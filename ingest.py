@@ -8,7 +8,6 @@ def load_pdf(file_path):
     documents = loader.load()
     return documents
 
-
 def split_text(document, chunk_size=1000, chunk_overlap=200):
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
@@ -16,7 +15,6 @@ def split_text(document, chunk_size=1000, chunk_overlap=200):
     )
     texts = text_splitter.split_documents(document)
     return texts
-
 
 def create_vector_store(texts, embedding_model="all-MiniLM-L6-v2"):
     embeddings = HuggingFaceEmbeddings(model_name=embedding_model)
@@ -26,6 +24,7 @@ def create_vector_store(texts, embedding_model="all-MiniLM-L6-v2"):
         persist_directory="./chroma_db"
         )
     return vector_store
+
 
 if __name__ == "__main__":
     file_path = "Tesla_EDA_Project_Report.pdf"

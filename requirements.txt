@@ -9,5 +9,4 @@ pypdf
 python-dotenv
 streamlit
 sentence-transformers
-torch
 transformers
